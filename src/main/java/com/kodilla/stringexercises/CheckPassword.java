@@ -14,18 +14,18 @@ public class CheckPassword {
         int y = 0;
         if (password.length() >= 6) {
             do {
+                if (x == 4) {
+                    break;
+                }
                 OUTER_LOOP:
                 for (int i = 0; i < password.length(); ++i) {
                     if (x == 0 && Character.isLowerCase(password.charAt(i))) {
-                        helper = true;
                         x = 1;
                     }
                     if (x == 1 && Character.isUpperCase(password.charAt(i))) {
-                        helper = true;
                         x = 2;
                     }
                     if (x == 2 && Character.isDigit(password.charAt(i))) {
-                        helper = true;
                         x = 3;
                     }
                     if (x == 3) {
@@ -41,9 +41,6 @@ public class CheckPassword {
                                 }
                             }
                         }
-                    }
-                    if (x == 4) {
-
                     }
                 }
                 ++y;
